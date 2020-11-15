@@ -4,10 +4,12 @@ from domain.user_class import User
 from domain.product_class import Product
 from decimal import Decimal
 
+identification = False
 def userAuthentication(username, password):
     user = User(username, password)
     data = user.toJSON()
-    return True
+    identification = True
+    return identification
     #res = requests.post('http://localhost:5000/api/prediction', json=data)
     #if res.ok:
     #    authentication = res["authentication"]
@@ -20,7 +22,9 @@ def userAuthentication(username, password):
     #    return True
 
 def getAllProducts():
-
+    productList = []
+    res = requests.get('http://localhost:5000/api/database')
+    res = res.json()
     productsRes = res["productList"]
     for productRes in productsRes:
         productName = productRes["product"]["name"]
