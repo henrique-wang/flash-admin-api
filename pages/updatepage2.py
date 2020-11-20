@@ -1,16 +1,16 @@
-import tkinter as tk
 from tkinter import Label
 from tkinter import Entry
 from tkinter import Button
 from tkinter import messagebox
 from domain.product_class import Product
 from db_access.services import editProduct
-
+import tkinter as tk
 LARGE_FONT = ("Verdana", 12)
 BRANCO = "#fff"
 
 class UpdatePage2(tk.Frame):
     def __init__(self, parent, controller):
+        import tkinter as tk
         self.controller = controller
         tk.Frame.__init__(self, parent, bg=BRANCO)
 
@@ -26,6 +26,7 @@ class UpdatePage2(tk.Frame):
         self.label.place(relx=0.5, rely=0.2, anchor='center')
         self.namel.place(relx=0.4, rely=0.3, anchor='center')
         self.pricel.place(relx=0.4, rely=0.35, anchor='center')
+        import tkinter as tk
 
         self.name.place(relx=0.5, rely=0.3, anchor='center')
         self.price.place(relx=0.5, rely=0.35, anchor='center')
@@ -33,11 +34,11 @@ class UpdatePage2(tk.Frame):
         self.grid_columnconfigure(3, weight=1)
 
         self.backButton = Button(self, text="Back",
-                             command=lambda: self.cancel_edit(controller))
+                                 command=lambda: self.cancel_edit(controller))
         self.backButton.place(relx=0.4, rely=0.4, anchor='center')
 
         self.nextButton = Button(self, text="Next",
-                             command=lambda: self.edit_product(controller))
+                                 command=lambda: self.edit_product(controller))
         self.nextButton.place(relx=0.6, rely=0.4, anchor='center')
 
     def cancel_edit(self, controller):

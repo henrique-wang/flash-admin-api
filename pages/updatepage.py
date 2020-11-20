@@ -41,12 +41,12 @@ class UpdatePage(Frame):
         # SelectButton
         self.selectButton = Button(self, text="Select",
                                 command=lambda: self.nextPage(controller))
-        self.selectButton.place(relx=0.7, rely=0.5, anchor='center')
+        self.selectButton.place(relx=0.72, rely=0.5, anchor='center')
 
         # BackButton
         self.backButton = Button(self, text="Back",
                                 command=lambda: self.cancel_update(controller), fg = 'red')
-        self.backButton.place(relx=0.7, rely=0.55, anchor='center')
+        self.backButton.place(relx=0.72, rely=0.55, anchor='center')
 
         # threading
         self.stopEvent = threading.Event()
